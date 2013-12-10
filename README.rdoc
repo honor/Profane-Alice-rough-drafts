@@ -1,0 +1,3 @@
+== Profane Alice
+
+Profane Alice is a tool that encourages good behavior in comments and discussions, inspired by Alice in Wonderland.
