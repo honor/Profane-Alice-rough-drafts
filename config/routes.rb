@@ -1,5 +1,7 @@
 PAlice::Application.routes.draw do
-  root  'static_pages#home'
+  resources :comments
+
+  root  'comments#index'
   match '/about',   to: 'static_pages#about',   via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
