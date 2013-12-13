@@ -1,10 +1,10 @@
-<% @comments.each do |comment| %>
 <li id="<%= comment.id %>" class="comment">
 	<p><%= comment.text %></p>
 	<%= comment.length %>
-	<span><%= link_to 'Edit', edit_comment_path(comment) %></span>
+	<span><%= link_to 'Edit', edit_comment_path(comment), remote: true %></span>
 	
 </li>
+
     
-<% end %>
+
 

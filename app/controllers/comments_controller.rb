@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all.limit(100)
+    @comments = Comment.all.limit(10)
   end
 
   # GET /comments/1
@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
   # GET /comments/new
   def new
     @comment = Comment.new
+    @comment.length = 250
   end
 
   # GET /comments/1/edit
@@ -28,11 +29,13 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to comments_url, notice: 'Comment was successfully created.' }
+        format.html { redirect_to comments_url }
         format.json { render action: 'show', status: :created, location: @comment }
+        format.js
       else
         format.html { render action: 'new' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -44,9 +47,11 @@ class CommentsController < ApplicationController
       if @comment.update(comment_params)
         format.html { redirect_to comments_url, notice: 'Comment was successfully updated.' }
         format.json { head :no_content }
+
       else
         format.html { render action: 'edit' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
+
       end
     end
   end
