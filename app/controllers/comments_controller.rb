@@ -1,10 +1,12 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
-
+#  after_action :create, [:push_create]
+#  after_action :update, [:push_update]
+ 
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all.last(10)
+    @comments = Comment.all.last(5)
   end
 
   # GET /comments/1
@@ -27,7 +29,11 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.length = 250
-
+    
+    Pusher['test_channel'].trigger('my_event', {
+          message: 'hello world'
+        })
+    
     respond_to do |format|
       if @comment.save
         format.html { redirect_to comments_url }
@@ -77,4 +83,16 @@ class CommentsController < ApplicationController
     def comment_params
       params.require(:comment).permit(:text, :length, :email)
     end
+    
+#    def push_create
+#      push_event('create')
+#    end
+
+#    def push_update
+#      push_event(event_type)
+
+#       Pusher['test_channel'].trigger(event_type, {
+#          message: 'hello world'
+#        })
+#    end
 end
