@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all.limit(10)
+    @comments = Comment.all.last(10)
   end
 
   # GET /comments/1
@@ -26,6 +26,7 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.new(comment_params)
+    @comment.length = 250
 
     respond_to do |format|
       if @comment.save
@@ -74,6 +75,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:text, :length)
+      params.require(:comment).permit(:text, :length, :email)
     end
 end
