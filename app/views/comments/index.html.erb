@@ -9,14 +9,5 @@
 <%= link_to 'New Comment', new_comment_path, id: "new_link", remote: true %>
 </div>
 
-<script src="http://js.pusherapp.com/2.1/pusher.min.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-    var pusher = new Pusher('08ad4c8d921285548468');
-    var channel = pusher.subscribe('test_channel');
-    channel.bind('my_event', function(data) {
-      alert(data.message);
-    });
-  </script>
 
 

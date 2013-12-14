@@ -1,1 +1,12 @@
 $('#new_link').hide().after('<%= j render("form") %>');
+$("#comment_text").keyup( function() {
+	var comment = $(this).val();
+	
+	if( comment.indexOf( "shit" ) != -1 ) {
+			$("#warning").show();
+			$("#warning").text( "Your comment contains a bad word." );
+			$(this).width( 300 );
+	} else {
+			$("#warning").hide();		
+	}
+});
