@@ -1,11 +1,12 @@
 
-<%= form_for comment, remote: true do |f| %>
-<div>
-	<p><%= comment.text %></p>
-	<p><%= comment.email %>  <%= comment.length.to_s %></p>
-</div>
-<% end %>
 
-    
+
+<div class="comment-display" id="comment-contain">
+	<div class="row">
+		<div class="span11"><p><%= comment.text %></p></div>
+		<div class="span7"><p style="color:#FF00FF">Manners: <%= comment.length.to_s %>%</p>Author: <%= comment.email %></div>
+	</div>
+</div>
+
 
 

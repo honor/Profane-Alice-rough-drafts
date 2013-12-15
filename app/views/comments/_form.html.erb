@@ -11,22 +11,23 @@
     </div>
   <% end %>
 
-<div>
-
-  <div id="warning"><!-- --></div>
-  <div class="comment-field">
-    <%= f.label :text %><br>
-    <%= f.text_field :text %>
+<div class="comment-box">
+	<div class="row">
+		<div class="span3">
+		<%= f.label "Say anything you want!" %>
+		<%= f.label "Manners:" + " " + @comment.length.to_s %></div>
+  		<div class="span6" id="warning"><!-- --></p></div><br>
+	</div>
+  <div class="comment-field">    
+    <%= f.text_area :text %>
   </div>
-
-  <div class="email">
-    <%= f.label :email %><br>
-    <%= f.email_field :email %>
+  <div class="row">
+    <div class="span7"><%= f.label 'Your email:' %>   <%= f.email_field :email %></div> 
+     </br></br><div class="submit"><%= f.submit %></div>	
   </div>
+  
 
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 </div>
+ 
+
 <% end %>

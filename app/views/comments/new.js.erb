@@ -1,12 +1,22 @@
+$(function(){
+
 $('#new_link').hide().after('<%= j render("form") %>');
+$("#comment_text").width(700).height(175);
 $("#comment_text").keyup( function() {
 	var comment = $(this).val();
+	var length = $('#comment_length').val();
 	
 	if( comment.indexOf( "shit" ) != -1 ) {
 			$("#warning").show();
-			$("#warning").text( "Your comment contains a bad word." );
-			$(this).width( 300 );
+			$("#warning").text( "Your comment contains a bad word." + '<%= j @comment.length.to_s %>' );
+		
+			$(this).width( 300 ).css("color","#FF00FF").slideUp(2000).slideDown(2000);
+			
 	} else {
-			$("#warning").hide();		
+			$("#warning").hide();
 	}
+});
+$(function(){
+	$("#comment_length").val('50');
+});
 });

@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
   # GET /comments.json
   def index
     @comments = Comment.all.last(5)
+ 
   end
 
   # GET /comments/1
@@ -17,7 +18,8 @@ class CommentsController < ApplicationController
   # GET /comments/new
   def new
     @comment = Comment.new
-    @comment.length = 250
+    @comment.length = 100
+ 
   end
 
   # GET /comments/1/edit
@@ -28,7 +30,7 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.create!(comment_params)
-    @comment.length = 250
+    @comment.length = 100
     
     respond_to do |format|
       if @comment.save
@@ -63,6 +65,8 @@ class CommentsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
