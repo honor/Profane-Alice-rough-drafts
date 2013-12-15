@@ -1,5 +1,7 @@
 == Profane Alice
 
-Profane Alice is a tool to gamify good manners in comments and discussions. It encourages good behavior by creating subtly annoying repercussions to bad behavior such as cursing, without overtly censoring comments that contain profane language. Inspired by Alice in Wonderland, the basic idea is to decrease the size of the default comment box to posters who use bad language. For example, when a user types the word 'shit', the comment box decreases from 100 words to 50 words. Denial of expression is a powerful tool in enforcing the best manners possible in public.
+Profane Alice is a tool to gamify good manners in comments and discussions. It encourages good behavior by creating subtly annoying repercussions to bad behavior such as cursing, without overtly censoring comments that contain profane language. Inspired by Alice in Wonderland, the basic idea is to decrease the size of the default comment box to posters who use bad language. 
 
-http://stark-wave-3566.herokuapp.com/
+For example, when a user types the word 'shit', the comment box decreases from 100 words to 50 words, and some odd things start to happen. Hard to post, huh? Yeah, better watch your manners. 
+
+http://stark-wave-3566.herokuapp.com
