@@ -4,19 +4,23 @@ $('#new_link').hide().after('<%= j render("form") %>');
 $("#comment_text").width(700).height(175);
 $("#comment_text").keyup( function() {
 	var comment = $(this).val();
-	var length = $('#comment_length').val();
+	var counter = 0;
 	
-	if( comment.indexOf( "shit" ) != -1 ) {
+	if(( comment.toLowerCase().indexOf( "shit" ) != -1 ) && ( comment.toLowerCase().indexOf( "fuck" ) != -1 )) {
 			$("#warning").show();
-			$("#warning").text( "Your comment contains a bad word." + '<%= j @comment.length.to_s %>' );
+			$("#warning").text( "Your comment contains a bad, bad word." );
 		
-			$(this).width( 300 ).css("color","#FF00FF").slideUp(2000).slideDown(2000);
+			$(this).width( 250 ).height(100).css("color","#FF00FF").slideUp(2000).slideDown(2000);
 			
-	} else {
+	} 
+	else if (( comment.toLowerCase().indexOf( "shit" ) != -1 ) || ( comment.toLowerCase().indexOf( "fuck" ) != -1 )) {
+		$("#warning").show();
+		$("#warning").text( "Your comment contains a bad, bad word." );
+	
+		$(this).width( 450 ).css("color","#FF00FF").slideUp(2000).slideDown(2000);
+	} 
+	else {
 			$("#warning").hide();
 	}
-});
-$(function(){
-	$("#comment_length").val('50');
 });
 });

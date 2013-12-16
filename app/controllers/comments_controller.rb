@@ -1,7 +1,5 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
-#  after_action :create, [:push_create]
-#  after_action :update, [:push_update]
  
   # GET /comments
   # GET /comments.json
@@ -30,8 +28,15 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = Comment.create!(comment_params)
-    @comment.length = 100
     
+    if (@comment.text.downcase.include? 'shit') && (@comment.text.include? 'fuck')
+      @comment.length = 33
+    elsif (@comment.text.downcase.include? 'shit') || (@comment.text.include? 'fuck')
+      @comment.length = 66
+    else
+      @comment.length = 100
+    end
+        
     respond_to do |format|
       if @comment.save
         format.html { redirect_to comments_url }
@@ -66,8 +71,6 @@ class CommentsController < ApplicationController
     end
   end
   
-
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
@@ -79,15 +82,4 @@ class CommentsController < ApplicationController
       params.require(:comment).permit(:text, :length, :email)
     end
     
-#    def push_create
-#      push_event('create')
-#    end
-
-#    def push_update
-#      push_event(event_type)
-
-#       Pusher['test_channel'].trigger(event_type, {
-#          message: 'hello world'
-#        })
-#    end
 end

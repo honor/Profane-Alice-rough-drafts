@@ -1,33 +1,37 @@
 <%= form_for @comment, remote: true do |f| %>
   <% if @comment.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+      <h2>
+		<%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:
+	  </h2>
 
       <ul>
       <% @comment.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+      	<li><%= msg %></li>
       <% end %>
-      </ul>
-    </div>
+    </ul>
+   </div>
   <% end %>
 
-<div class="comment-box">
+  <div class="comment-box">
 	<div class="row">
 		<div class="span3">
-		<%= f.label "Say anything you want!" %>
-		<%= f.label "Manners:" + " " + @comment.length.to_s %></div>
+		  <%= f.label "Say anything you want!" %>
+		  
+		</div>
   		<div class="span6" id="warning"><!-- --></p></div><br>
 	</div>
   <div class="comment-field">    
     <%= f.text_area :text %>
   </div>
   <div class="row">
-    <div class="span7"><%= f.label 'Your email:' %>   <%= f.email_field :email %></div> 
-     </br></br><div class="submit"><%= f.submit %></div>	
+    <div class="span7">
+		<%= f.label 'Your email:' %>   <%= f.email_field :email %>
+    </div> 
+    </br></br>
+	<div class="submit">
+	  <%= f.submit %>
+	</div>	
   </div>
-  
-
 </div>
- 
-
 <% end %>

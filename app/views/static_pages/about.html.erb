@@ -1,2 +1,38 @@
 <% provide(:title, 'About') %>
-<%= yield(:title) %>
+<h1>IDEA</h1>
+<p>Profane Alice is a tool that gamifies good manners in comments and discussions. </p>
+<p>HuffPo's current commenting system allows users to post up to 250 words for each comment. Taking a simpler starting allocation for each user of 100 words, I want to be able to shrink the comment box allowed to a user when he/she exhibits bad posting manners, such as profanity, shouting (using all caps or too many exclamation marks), or spitting (insulting other users, racial slurs).
+The text box allowed to an especially bad-mannered user would shrink to ridiculously small proportions until it (and the user) disappears in a puff of smoke. </p></br>
+<h1>FEATURES BRAINSTORM</h1>
+<p>	FEATURE</p>
+	* A user's allotment of 100 words per post decreases in real time if he uses curse words. If he uses more than one curse word, his allotment might shrink to a strikingly small amount, making it really difficult for him to say anything at all.</p>
+	* Similarly, a well-mannered user would gain privileges such the ability to post additional media other than just text, or the ability to post comments longer than 100 words (perhaps transitioning to the status of blogger).</p>
+<p>	FEATURE</p>
+	* A user's manners score is algorithmically determined by a combination of factors. It lowers drastically when a user curses, and that score persists to future posts. So if a user wants to raise his manners score, he can go and clean up the language in his past posts.</p>
+	FEATURE</p>
+	* When a user is logged in, the curse words in his posts appear pink to him (but black to everyone else)</p>
+	* If he edits one or more of his posts to clean up his language, his manners score increases</p>
+	FEATURE</p>
+	* Users can follow each other, and when a user gets more than 10 followers his manners score goes up</p>
+	
+	FEATURE</p>
+	
+	* Comments by users with low manners scores appear grayed out when posted</p></br>
+	
+	<h1>WHAT I LEARNED</h1>
+
+	I am just at the beginning of providing a decent answer to this challenge, and I'm embarrassed by how trivial my implementation is currently. I was aiming for tackling the backend challenge, but at some point fell in love with the idea of messing with the text box of a comment in real time when a user is behaving badly, and decided to just take that idea as far as I could in the time left.</p>
+
+	This was my first time exploring anything other than trivial jQuery calls, and my very first time with AJAX. I also got a crash course in Chrome developer tools, otherwise my progress would have been even slower. So my outcome is a lot more primitive than someone who was already familiar with these tools. </p>
+
+	Given more time I would: </p>
+
+	1) use web sockets to provide real-time notifications to users about others who are posting</p>
+	2) algorithmically calculate a manners score based on a number of different behaviors besides cursing</p>
+	3) implement different users, authenticate users</p>
+	4) implement an API and do more with parsing a long list of obscene words and then serving up calculations based on those words.</p></br>
+
+
+<h1>CONCLUSIONS</h1></p>
+<p>Monitoring good behavior in discussions is not a trivial task. Human monitors don't scale, and attempts at automatically censoring certain language or behaviors have run into a host of issues, including the <a href="http://en.wikipedia.org/wiki/Scunthorpe_problem">Scunthorpe problem</a>. A combination of community enforcement (users who get a lot of followers and likes are probably behaving within a range of decency) and gamification of manners might be the best answer to this problem. </p></br>
+
