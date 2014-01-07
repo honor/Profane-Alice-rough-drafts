@@ -1,3 +1,27 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+    font-family: 'Segoe UI';
+    font-size: 12pt;
+}
+
+.square1 {
+    background-color: #1BA1E2;
+}
+
+.square2 {
+    background-color: black;
+}
+
+.h1{
+    font-size:12pt;
+    color: #fff;
+    background-color: #1BA1E2;
+}
+.square {
+		max-width: 100px;
+        max-height: 100px;
+    padding: 0px;
+}

@@ -7,4 +7,7 @@ class StaticPagesController < ApplicationController
   
   def part2
   end
+  
+  def checkerboard
+  end
 end
