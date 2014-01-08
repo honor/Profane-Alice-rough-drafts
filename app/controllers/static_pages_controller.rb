@@ -9,5 +9,6 @@ class StaticPagesController < ApplicationController
   end
   
   def checkerboard
+    @squares = [ 1..100 ]
   end
 end

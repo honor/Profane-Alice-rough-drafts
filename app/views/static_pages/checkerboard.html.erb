@@ -14,3 +14,17 @@
     </div>
   </header>
 </body>
+
+<table>
+  <tbody>
+    <% @squares.each do |row| %>
+      <tr>
+        <% row.each do |column| %>
+          <td>
+            <%= column %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
