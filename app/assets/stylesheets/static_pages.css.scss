@@ -7,12 +7,19 @@ body{
     font-size: 12pt;
 }
 
-.square1 {
-    background-color: #1BA1E2;
+.black {
+    background-color: black;
+		max-width: 30px;
+        max-height: 30px;
+    	padding: 0px;
+		margin: -20px;
 }
 
-.square2 {
-    background-color: black;
+.white {
+    background-color: white;
+		max-width: 30px;
+        max-height: 30px;
+    padding: 0px;
 }
 
 .h1{
@@ -20,8 +27,33 @@ body{
     color: #fff;
     background-color: #1BA1E2;
 }
-.square {
-		max-width: 100px;
-        max-height: 100px;
+#blackfirstblackformat {
+		min-height: 100px;
+        min-width: 100px;
     padding: 0px;
+		border: 1px;
+		background-color: black;
+}
+#blackfirstwhiteformat {
+		min-height: 100px;
+        min-width: 100px;
+    padding: 0px;
+		border: 1px;
+		background-color: white;
+}
+
+#whitefirstblackformat {
+		min-height: 100px;
+        min-width: 100px;
+    padding: 0px;
+		border: 1px;
+		background-color: black;
+}
+
+#whitefirstwhiteformat {
+		min-height: 100px;
+        min-width: 100px;
+    padding: 0px;
+		border: 1px;
+		background-color: white;
 }
