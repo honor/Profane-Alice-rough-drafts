@@ -9,12 +9,12 @@
    <tr>
        <% row.each do |column| %>
 		<% if column.odd? %>
-         <td id="blackfirstblackformat">
+         <td id="blackbox">
            <%= column %>
          </td>
 		
 		<% else%>
-		 <td id="blackfirstwhiteformat">
+		 <td id="whitebox">
           <%= column %>
         </td>
 		<% end %>
@@ -25,12 +25,12 @@
 <tr>
      <% row.each do |column| %>
 		<% if column.odd? %>
-       <td id="whitefirstwhiteformat">
+       <td id="whitebox">
          <%= column %>
        </td>
 		
 		<% else%>
-		 <td id="whitefirstblackformat">
+		 <td id="blackbox">
         <%= column %>
       </td>
 		<% end %>
