@@ -10,12 +10,12 @@
        <% row.each do |column| %>
 		<% if column.odd? %>
          <td id="blackbox">
-           <%= column %>
+           <%= "PUCK" %>
          </td>
 		
 		<% else%>
 		 <td id="whitebox">
-          <%= column %>
+          <%= "SHUCK" %>
         </td>
 		<% end %>
        <% end %>
@@ -26,12 +26,12 @@
      <% row.each do |column| %>
 		<% if column.odd? %>
        <td id="whitebox">
-         <%= column %>
+         <%= "CUCK" %>
        </td>
 		
 		<% else%>
 		 <td id="blackbox">
-        <%= column %>
+        <%= "DUCK" %>
       </td>
 		<% end %>
      <% end %>
@@ -41,3 +41,4 @@
  <% end %>
   </tbody>
 </table>
+
