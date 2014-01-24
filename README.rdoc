@@ -1,4 +1,4 @@
 == Profane Alice
 
-Profane Alice is the first draft of a tool to gamify good manners in comments and discussions. It encourages good behavior by creating subtly annoying repercussions to bad behaviors such as cursing, without overtly censoring comments that contain profane language. Inspired by Alice in Wonderland, the basic idea is to decrease the size of the default comment box to posters who use bad language.
+Profane Alice is the first draft of a tool to gamify good manners in comments and discussions. It encourages good behavior by creating subtly annoying repercussions to bad behaviors such as cursing, without overtly censoring comments that contain profane language. Inspired by Alice in Wonderland.
 
